@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100718">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Um livro de memórias, fotografias e poemas de Davi para Evelyn.">
+<title>Entre Pétalas e Nós — Davi & Evelyn</title>
+<style>
+:root{--bg:#0a0612;--paper:#1b1127;--paper2:#241530;--ink:#f8eaff;--violet:#b875f5;--lilac:#dcb5fc;--soft:#d1b7e1;--line:#a66ddd66}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:Arial,Helvetica,sans-serif;background:radial-gradient(ellipse 80% 45% at 50% 37%,#3d1b5a70,transparent 73%),linear-gradient(155deg,#090511,#160b25 59%,#090511);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;opacity:.4;pointer-events:none;background:radial-gradient(circle at 10% 20%,#d9a2ff 0 1px,transparent 2px),radial-gradient(circle at 80% 70%,#b37df2 0 1px,transparent 2px);background-size:179px 161px,233px 237px}
+button{font:inherit;cursor:pointer;touch-action:manipulation}
+button:focus-visible{outline:3px solid #f0d6ff;outline-offset:3px}
+.site{width:min(1160px,calc(100% - 28px));margin:0 auto;padding:18px 0 38px;text-align:center}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#d8bbf3;min-height:42px}
+.mark{font:italic 25px Georgia,serif;letter-spacing:.035em}
+.music{display:inline-flex;gap:10px;align-items:center;justify-content:center;background:#271538;border:1px solid #a774cd80;border-radius:100px;color:#f1e3fa;padding:10px 17px;font-size:12px;box-shadow:0 5px 20px #0005;min-height:40px}
+.music:hover{background:#39214d}
+.eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#d2a7f5;margin:12px auto 4px;line-height:1.6}
+h1{margin:7px 0 8px;font:normal clamp(43px,7vw,78px)/1.06 Georgia,'Times New Roman',serif;letter-spacing:-.06em;color:#fff2ff}
+h1 span{font-style:italic;color:#c782ff;font-weight:400}
+.intro{max-width:700px;margin:0 auto;color:#d5c0e2;font:16px/1.55 Georgia,serif}
+.decor{display:flex;gap:16px;justify-content:center;align-items:center;margin:15px auto 0;color:#bf8ef5;font-size:22px}
+.decor::before,.decor::after{content:"";width:55px;height:1px;background:linear-gradient(90deg,transparent,#a06dc7)}
+.decor::after{transform:rotate(180deg)}
+.stage{position:relative;display:grid;place-items:center;min-width:0;width:100%;padding:25px 6px 16px;isolation:isolate}
+.stage::before{content:"";position:absolute;z-index:-1;width:min(96%,760px);height:340px;top:47%;left:50%;transform:translate(-50%,-50%);filter:blur(90px);background:#7f39b0a0;border-radius:50%;pointer-events:none}
+.book{position:relative;width:min(100%,1020px);height:585px;perspective:1400px;filter:drop-shadow(0 28px 22px #000b)}
+.book::before{content:"";position:absolute;z-index:5;top:10px;bottom:10px;left:-8px;width:18px;border-radius:11px 0 0 11px;pointer-events:none;background:linear-gradient(90deg,#0d0716,#774c94 42%,#281339)}
+.book .sheet,.book .cover{position:absolute;inset:0;border-radius:12px 22px 22px 12px;overflow:hidden}
+.sheet{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-width:0;min-height:0;background:linear-gradient(90deg,#21132d,#1b1126 48%,#100a1c 50%,#20132b);border:1px solid #ad70d77b;box-shadow:inset 0 0 0 7px #e3b1ff08,inset 20px 0 25px #08050db5;opacity:0;visibility:hidden;pointer-events:none;transform-style:preserve-3d}
+.sheet::after{position:absolute;z-index:4;content:"";width:23px;top:0;bottom:0;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,transparent,#08041180 45%,#d4a3f817 75%,transparent);pointer-events:none}
+.sheet.active{opacity:1;visibility:visible;pointer-events:auto;z-index:2}
+.sheet.departing{opacity:1;visibility:visible;z-index:4;pointer-events:none}
+.sheet.entering{z-index:2}
+.sheet.departing.nextturn{transform-origin:left center;animation:pageOutNext .65s ease-in-out both}
+.sheet.entering.nextturn{transform-origin:right center;animation:pageInNext .65s ease-in-out both}
+.sheet.departing.prevturn{transform-origin:right center;animation:pageOutPrev .65s ease-in-out both}
+.sheet.entering.prevturn{transform-origin:left center;animation:pageInPrev .65s ease-in-out both}
+@keyframes pageOutNext{0%{transform:rotateY(0);opacity:1}100%{transform:rotateY(-72deg);opacity:0}}
+@keyframes pageInNext{0%{transform:rotateY(42deg);opacity:.35}100%{transform:rotateY(0);opacity:1}}
+@keyframes pageOutPrev{0%{transform:rotateY(0);opacity:1}100%{transform:rotateY(72deg);opacity:0}}
+@keyframes pageInPrev{0%{transform:rotateY(-42deg);opacity:.35}100%{transform:rotateY(0);opacity:1}}
+.photo-panel,.poem-panel,.video-panel,.letter-panel{position:relative;min-width:0;min-height:0;overflow:hidden}
+.photo-panel{padding:21px 23px 21px 27px}
+.photo-mat{width:100%;height:100%;display:grid;place-items:center;overflow:hidden;position:relative;border-radius:5px;border:1px solid #c08aec69;background:#0d0814;box-shadow:0 8px 25px #0008}
+.photo-mat img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}
+.photo-caption{position:absolute;bottom:31px;left:50%;max-width:calc(100% - 50px);transform:translateX(-50%);padding:7px 12px;border-radius:100px;color:#f5e5ff;background:#13091dd4;border:1px solid #b77af058;backdrop-filter:blur(6px);font:italic 15px Georgia,serif;overflow-wrap:break-word}
+.poem-panel{padding:25px 30px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#9658be #180e22;display:flex;align-items:center;min-width:0}
+.poem-body{width:100%;max-width:410px;margin:auto;overflow-wrap:anywhere}
+.poem-body::before{content:"❦";display:block;margin-bottom:4px;color:#cb92f9;font:29px Georgia,serif}
+.chapter{display:block;color:#c8a5df;text-transform:uppercase;letter-spacing:.16em;font-size:10px;line-height:1.4;font-weight:700}
+h2{margin:12px auto 16px;color:#f2dcff;font:normal clamp(27px,3.2vw,39px)/1.12 Georgia,serif;text-wrap:balance;overflow-wrap:anywhere}
+.verse{color:#e8d4ee;font:normal clamp(18px,2.1vw,23px)/1.38 Georgia,serif;white-space:pre-line;overflow-wrap:anywhere;margin:0}
+.sign{margin:16px 0 0;color:#ca93ed;font:italic 16px Georgia,serif}
+.counter-small{position:absolute;bottom:10px;right:17px;color:#baa1cb;font-size:10px;letter-spacing:.13em;background:#1b1126ba;border-radius:20px;padding:4px 7px;pointer-events:none}
+.cover{z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;background:radial-gradient(circle at 50% 27%,#592d7d 0%,#29143d 37%,#11091d 74%);border:2px solid #b279e9;box-shadow:inset 0 0 0 7px #140a20,inset 0 0 0 8px #bc88eb88,inset 0 0 0 16px #cba4f90a,0 0 36px #ba6cff36;transform-origin:left center;transition:transform 1.05s cubic-bezier(.19,.8,.16,1),opacity .9s,visibility .9s}
+.cover.open{transform:rotateY(-140deg);opacity:0;visibility:hidden;pointer-events:none}
+.cover::before,.cover::after{content:"✧";position:absolute;color:#cf91ff90;font-size:40px}
+.cover::before{left:30px;top:17px}.cover::after{right:30px;bottom:17px}
+.flower{height:140px;width:140px;display:grid;place-items:center;filter:drop-shadow(0 0 18px #ad67f477);animation:gentle 7s ease-in-out infinite alternate}
+.flower svg{height:135px;width:135px;overflow:visible}
+@keyframes gentle{from{transform:translateY(0)}to{transform:translateY(-5px)}}
+.cover-kicker{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#ead2fa;margin:11px 0 14px}
+.cover h2{font-size:clamp(50px,6.6vw,78px);letter-spacing:-.06em;line-height:.96;margin:0 0 10px;text-shadow:0 4px 20px #0008}
+.cover-subtitle{font:italic 23px Georgia,serif;margin:5px 0 25px;color:#d6aff4}
+.cover-dedication{font-size:11px;letter-spacing:.12em;color:#cba8dc;margin:0}
+.ribbon-h,.ribbon-v{position:absolute;pointer-events:none;transition:opacity .8s,transform .8s}
+.ribbon-h{left:0;right:0;top:58%;height:27px;background:linear-gradient(180deg,#481670,#b26def 45%,#602c8b);box-shadow:0 0 19px #a65af064}
+.ribbon-v{top:0;bottom:0;left:calc(50% - 14px);width:28px;background:linear-gradient(90deg,#482269,#bf7ef0,#502375);opacity:.92}
+.bow{position:absolute;z-index:12;top:calc(58% - 44px);left:50%;transform:translateX(-50%);width:98px;height:104px;display:grid;place-items:center;border:0;background:none;filter:drop-shadow(0 0 15px #c07aff);transition:transform .3s,opacity .6s}
+.bow svg{height:86px;width:86px}
+.bow:hover{transform:translateX(-50%) scale(1.07)}
+.cover.one-click .bow{transform:translateX(-50%) rotate(-12deg) scale(1.06)}
+.cover.unwrapped .bow{transform:translateX(-50%) translateY(-60px) scale(.7);opacity:0;pointer-events:none}
+.cover.unwrapped .ribbon-h{transform:translateX(-110%);opacity:0}
+.cover.unwrapped .ribbon-v{transform:translateY(-110%);opacity:0}
+.bow-hint{position:absolute;bottom:20px;color:#e4c8f7;font-size:12px;max-width:90%;line-height:1.4}
+.nav{display:flex;align-items:center;justify-content:center;gap:18px;margin:6px auto 0;flex-wrap:wrap;max-width:760px}
+.nav button{border:1px solid #bb7bea5e;background:#27143b;color:#f1dcfd;padding:12px 17px;border-radius:100px;font-size:12px;transition:background .2s}
+.nav button:hover:not(:disabled){background:#48245d}
+.nav button:disabled{opacity:.35;cursor:not-allowed}
+.page-status{font-size:12px;color:#d7c0e2;min-width:110px}
+.status-message{color:#cfb3e3;font-size:12px;margin:12px auto 0;min-height:22px;max-width:620px;line-height:1.5}
+.note{font:italic 17px Georgia,serif;color:#bfa5d1;margin:5px auto 0}
+.video-panel{padding:22px}
+.video-shell{height:100%;width:100%;position:relative;overflow:hidden;display:grid;place-items:center;border:1px solid #ab72d18c;border-radius:8px;background:#060409;box-shadow:0 12px 26px #000a}
+.video-shell video{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;background:#000}
+.video-play{position:absolute;z-index:8;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;max-width:85%;padding:15px 19px;border:1px solid #d3a5f2d0;background:#230e33e6;color:#fff;border-radius:19px;box-shadow:0 10px 22px #0008;text-align:center;font-size:13px;line-height:1.35}
+.video-play .triangle{font-size:36px;line-height:1;color:#edd0ff}
+.video-play[hidden]{display:none!important}
+.letter-panel{padding:0;display:block}
+.final-sheet .counter-small{display:none}
+.letter-scroll{height:100%;width:100%;min-width:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#a169c7 #201329;padding:25px 31px 33px;text-align:left;overflow-wrap:anywhere}
+.letter-scroll .chapter{text-align:center}
+.letter-scroll h2{text-align:center;font-size:clamp(27px,2.8vw,35px);margin:11px 0 7px;line-height:1.16}
+.scroll-tip{margin:0 0 18px;text-align:center;color:#b78bd6;font:italic 14px Georgia,serif}
+.letter-copy{font:normal 19px/1.52 Georgia,serif;color:#f2e1fa;white-space:pre-line;overflow-wrap:break-word}
+.petal-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:50}
+.petal{position:absolute;top:-45px;width:var(--w);height:var(--h);opacity:0;border-radius:82% 15% 75% 15%;background:linear-gradient(140deg,#efbeff,#ac61ec 55%,#633097);box-shadow:inset -3px -2px 5px #39135480,0 0 7px #c783ef80;animation:petalFall var(--dur) linear var(--delay) forwards}
+@keyframes petalFall{0%{transform:translate3d(0,-50px,0) rotate(0);opacity:0}10%{opacity:.9}85%{opacity:.85}100%{transform:translate3d(var(--drift),110vh,0) rotate(var(--spin));opacity:0}}
+@media(max-width:850px){
+ .site{width:min(100% - 20px,600px)}.eyebrow{margin-top:16px}.intro{max-width:530px}
+ .book{width:min(100%,540px);height:790px}
+ .sheet{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,47%) minmax(0,53%)}
+ .sheet::after{top:47%;bottom:auto;left:0;right:0;height:16px;width:auto;transform:translateY(-50%);background:linear-gradient(transparent,#05020b94,#b98ce52a,transparent)}
+ .photo-panel{padding:15px 22px 9px}.photo-caption{bottom:19px}
+ .poem-panel{padding:16px 25px 20px}
+ .poem-body h2{font-size:34px;margin:9px 0 10px}.verse{font-size:21px;line-height:1.31}
+ .final-sheet{grid-template-rows:minmax(0,39%) minmax(0,61%)}.final-sheet::after{top:39%}
+ .video-panel{padding:15px 22px 6px}.letter-scroll{padding:17px 24px 32px}.letter-copy{font-size:18px;line-height:1.48}
+ .letter-scroll h2{font-size:30px}.scroll-tip{margin-bottom:12px}
+ .cover h2{font-size:60px}
+}
+@media(max-width:480px){
+ .site{width:min(100% - 16px,460px)}.bar{gap:7px}.music{padding:9px 11px;font-size:11px}.mark{font-size:19px}
+ .eyebrow{font-size:9px;letter-spacing:.14em}h1{font-size:48px}.intro{font-size:14px}
+ .stage{padding:16px 3px 10px}.book{height:745px;width:100%}
+ .sheet{grid-template-rows:minmax(0,43%) minmax(0,57%)}.sheet::after{top:43%}
+ .photo-panel{padding:10px 15px 7px}.photo-caption{font-size:13px;bottom:12px;padding:6px 10px;max-width:90%}
+ .poem-panel{padding:12px 18px 22px}.poem-body h2{font-size:28px}.verse{font-size:18px;line-height:1.28}.sign{font-size:14px;margin-top:10px}
+ .chapter{font-size:9px}.poem-body::before{font-size:19px;margin-bottom:2px}
+ .final-sheet{grid-template-rows:minmax(0,38%) minmax(0,62%)}.final-sheet::after{top:38%}
+ .video-panel{padding:10px 15px 5px}.letter-scroll{padding:14px 17px 34px}.letter-scroll h2{font-size:28px}.letter-copy{font-size:17px;line-height:1.43}.scroll-tip{font-size:13px}
+ .flower{height:130px;width:130px}.flower svg{height:125px;width:125px}.cover h2{font-size:49px}.cover-subtitle{font-size:21px}.cover-kicker{font-size:9px}
+ .nav{gap:8px}.nav button{padding:10px 12px;font-size:11px}.page-status{min-width:75px;font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Versão otimizada para navegadores móveis */
+@keyframes mobileFadeOut {from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(-10px)}}
+@keyframes mobileFadeIn {from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:translateX(0)}}
+@media (max-width:850px){
+ .site{padding-bottom:28px}
+ .stage{isolation:isolate}
+ .stage::before{filter:blur(32px);height:250px}
+ .book{height:min(760px,max(590px,84svh));perspective:none;filter:none;box-shadow:0 20px 45px #020006cc}
+ .book::before{width:8px;left:-3px}
+ .sheet{transform-style:flat;backface-visibility:visible}
+ .sheet.departing.nextturn,.sheet.departing.prevturn{animation:mobileFadeOut .25s ease-in both;transform-origin:center}
+ .sheet.entering.nextturn,.sheet.entering.prevturn{animation:mobileFadeIn .25s ease-out both;transform-origin:center}
+ .poem-panel{display:block;overflow-y:auto;overflow-x:hidden;text-align:center;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+ .poem-body{margin:0 auto;max-width:100%}
+ .cover{transition:transform .65s ease,opacity .65s ease,visibility .65s}
+ .cover.open{transform:scale(.965) translateY(-8px);opacity:0;visibility:hidden;pointer-events:none}
+ .letter-scroll{-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+ .photo-mat img{backface-visibility:hidden}
+ .video-play{min-height:64px}
+ .nav button{min-height:44px}
+ .petal{box-shadow:none}
+}
+@media (max-width:480px){
+ .book{height:min(730px,max(580px,83svh))}
+ .sheet{grid-template-rows:minmax(0,42%) minmax(0,58%)}
+ .sheet::after{top:42%}
+ .poem-panel{padding:12px 16px 18px}
+ .poem-body h2{font-size:clamp(24px,7vw,28px);line-height:1.1}
+ .verse{font-size:clamp(16px,4.45vw,18px);line-height:1.3}
+ .final-sheet{grid-template-rows:minmax(0,38%) minmax(0,62%)}
+ .final-sheet::after{top:38%}
+ .video-panel{padding:10px 12px 5px}
+ .letter-scroll{padding:15px 17px 26px}
+ .letter-copy{font-size:16px;line-height:1.44}
+ .cover h2{font-size:clamp(40px,12vw,52px)}
+ .cover-subtitle{font-size:20px}
+ .cover-kicker{max-width:90%;font-size:9px;letter-spacing:.14em}
+}
+@media (max-width:360px){
+ .book{height:640px}
+ .poem-panel{padding:10px 13px 16px}
+ .verse{font-size:16px}
+ .letter-scroll{padding:11px 13px 25px}
+ .letter-copy{font-size:15px}
+ .music{padding:9px 9px}
+}
+
+</style>
+</head>
+<body>
+<div class="petal-layer" id="petals" aria-hidden="true"></div>
+<main class="site">
+ <div class="bar"><div class="mark">D ♡ E</div><button id="musicToggle" class="music" type="button"><span aria-hidden="true">♫</span><span id="musicLabel">Preparando música...</span></button></div>
+ <div class="eyebrow">Dois corações • tantas lembranças • uma história</div>
+ <h1>Davi <span>&</span> Evelyn</h1>
+ <p class="intro">Algumas lembranças merecem mais do que fotografias. Elas merecem versos, carinho e um lugar especial para viverem para sempre.</p>
+ <div class="decor" aria-hidden="true">✧ ❀ ✧</div>
+ <section class="stage" aria-label="Livro de fotografias e poemas">
+  <div class="book" id="book">
+   <div id="sheets"></div>
+   <div class="cover" id="cover">
+    <div class="flower" aria-hidden="true">
+     <svg viewBox="0 0 180 180"><defs><radialGradient id="gPetal" cx="40%" cy="18%" r="90%"><stop offset="0" stop-color="#ffdfff"/><stop offset=".35" stop-color="#c27bff"/><stop offset=".75" stop-color="#8740d0"/><stop offset="1" stop-color="#532088"/></radialGradient><radialGradient id="gCore"><stop offset="0" stop-color="#fff4c9"/><stop offset=".65" stop-color="#cfa673"/><stop offset="1" stop-color="#714581"/></radialGradient></defs><g transform="translate(90 90)"><ellipse cy="-45" rx="26" ry="47" fill="url(#gPetal)"/><ellipse cy="-45" rx="26" ry="47" fill="url(#gPetal)" transform="rotate(72)"/><ellipse cy="-45" rx="26" ry="47" fill="url(#gPetal)" transform="rotate(144)"/><ellipse cy="-45" rx="26" ry="47" fill="url(#gPetal)" transform="rotate(216)"/><ellipse cy="-45" rx="26" ry="47" fill="url(#gPetal)" transform="rotate(288)"/><circle r="13" fill="url(#gCore)" stroke="#e8baff" stroke-width="2"/><path d="M-7 0 0-8 7 0 0 8Z" fill="#fff1c6" opacity=".85"/></g></svg>
+    </div>
+    <div class="cover-kicker">Nosso jardim de memórias</div>
+    <h2>Entre pétalas<br>e nós</h2>
+    <p class="cover-subtitle">Um livro só nosso</p>
+    <p class="cover-dedication">Para Evelyn, com amor — Davi</p>
+    <div class="ribbon-h"></div><div class="ribbon-v"></div>
+    <button id="bow" class="bow" type="button" aria-label="Toque duas vezes para desatar o laço"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="ribbonGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5d2ff"/><stop offset=".5" stop-color="#b877f5"/><stop offset="1" stop-color="#632995"/></linearGradient></defs><path d="M50 47C21 0 1 23 16 54c13 18 27 0 34-6Z" fill="url(#ribbonGradient)" stroke="#f1d3ff" stroke-width="2"/><path d="M50 47C79 0 99 23 84 54c-13 18-27 0-34-6Z" fill="url(#ribbonGradient)" stroke="#f1d3ff" stroke-width="2"/><path d="M47 55 28 96 48 78 56 96 58 55" fill="#9c58d3" stroke="#e4b5ff" stroke-width="2"/><path d="M53 55 72 96 53 79 43 96 42 55" fill="#b778ed" stroke="#e4b5ff" stroke-width="2"/><ellipse cx="50" cy="49" rx="11" ry="10" fill="#edd0ff" stroke="#fff4ff" stroke-width="2"/></svg></button>
+    <div class="bow-hint" id="bowHint">Toque duas vezes no laço para abrir ♡</div>
+   </div>
+  </div>
+ </section>
+ <nav class="nav" aria-label="Virar páginas do livro">
+  <button type="button" id="prev" disabled>← Voltar</button>
+  <span id="counter" class="page-status" aria-live="polite">Livro fechado</span>
+  <button type="button" id="next" disabled>Próxima página →</button>
+ </nav>
+ <p class="status-message" id="status" role="status" aria-live="polite"></p>
+ <p class="note">“As páginas mais bonitas ainda podem estar por vir.”</p>
+</main>
+<audio id="song" preload="metadata" loop src="assets/petala.mp3"></audio>
+<script>
+(()=>{
+'use strict';
+const photos = ["assets/foto-01.jpg", "assets/foto-02.jpg", "assets/foto-03.jpg", "assets/foto-04.jpg", "assets/foto-05.jpg", "assets/foto-06.jpg", "assets/foto-07.jpg", "assets/foto-08.jpg"];
+const moments = [
+    {
+      chapter:'01 · O começo', title:'Quando o acaso sorriu', caption:'Tudo começou com um sorriso',
+      verse:`Antes de existir um “nós”,\no tempo seguia distraído,\nsem saber que dois sorrisos\npodiam guardar tanto destino.\n\nE, entre uma brincadeira e outra,\no meu mundo, sem fazer barulho,\ncomeçou a ter um pouco mais de você.`
+    },
+    {
+      chapter:'02 · A proximidade', title:'O lugar mais bonito', caption:'A beleza das coisas simples',
+      verse:`Se me perguntarem onde mora\na parte mais tranquila do meu dia,\nnão direi o nome de uma rua\nnem apontarei alguma cidade.\n\nDirei apenas: existe um instante\nem que você está perto de mim,\ne o mundo inteiro cabe nessa calma.`
+    },
+    {
+      chapter:'03 · As descobertas', title:'Colecionar instantes', caption:'Um instante que ficou',
+      verse:`Não são somente os grandes dias\nque fazem uma história valer.\nSão os segundos tão pequenos\nque a memória insiste em proteger.\n\nUm sorriso no meio da conversa,\num olhar que me encontra sem avisar: \nsão coisas que o tempo não consegue levar.`
+    },
+    {
+      chapter:'04 · Nosso jeito', title:'Na mesma torcida', caption:'Até o comum vira lembrança',
+      verse:`Que a vida nos encontre assim:\ncom mil assuntos para conversar,\nrindo do que ninguém entende,\ninventando motivos para ficar.\n\nNão preciso de um dia perfeito;\nse existe leveza entre nós,\naté a noite parece cantar.`
+    },
+    {
+      chapter:'05 · O carinho', title:'Um segundo de eternidade', caption:'Carinho que vira memória',
+      verse:`Queria guardar certos momentos\nentre as páginas de um caderno,\npara abrir quando desse saudade\ne encontrar, ali, o tempo eterno.\n\nMas não se prende um instante assim:\nainda bem que a lembrança floresce\ntoda vez que penso em você perto de mim.`
+    },
+    {
+      chapter:'06 · A leveza', title:'Nosso lado mais bonito', caption:'Rir juntos também é amar',
+      verse:`Que nunca nos falte a coragem\nde sermos tão simples e inteiros,\nde rir sem explicar o motivo,\nde inventar mundos passageiros.\n\nPorque o amor também é isso:\ndois corações sem personagem,\nfelizes até numa brincadeira.`
+    },
+    {
+      chapter:'07 · As lembranças', title:'O brilho das noites comuns', caption:'Mais uma lembrança nossa',
+      verse:`Há noites que passam depressa,\nmas deixam uma luz acesa em nós.\nNão sei se é a rua, o céu,\nou a alegria de ouvir sua voz.\n\nSe pudesse escolher um presente,\npediria à vida, com delicadeza,\nmais momentos assim, ao seu lado.`
+    },
+    {
+      chapter:'08 · Nosso piquenique', title:'Onde o amor floresce', caption:'Uma tarde para guardar',
+      verse:`Entre flores, frutas e céu aberto,\nfizemos da tarde um pequeno jardim.\nNada precisava ser grandioso:\nera bonito você estar ali.\n\nE, se amanhã o tempo mudar,\nque a gente ainda saiba escolher\noutros lugares para florescer.`
+    }
+  ];
+const letter = `Evelyn, meu amor,\n\nSe você chegou até esta página, percorreu algumas das lembranças que fazem a nossa história tão especial para mim. Olhar para essas fotos me lembra de algo que às vezes se perde na correria dos dias: a beleza de ter encontrado alguém com quem posso compartilhar risadas, passeios, conversas e até os instantes mais bobos da vida.\n\nEu lembro do quanto é bom estar perto de você. Do nosso jeito de brincar, dos sorrisos que aparecem sem pedir licença, do carinho que cabe num gesto e de como um dia simples pode se tornar inesquecível. Lembro também do nosso piquenique, do cuidado em preparar cada detalhe e da felicidade de estar ali com você. São lembranças que não quero deixar passar sem agradecer.\n\nEu sei que nenhum relacionamento é feito só de momentos perfeitos. A vida muda, a rotina acontece, e a gente também muda com ela. Há dias em que é difícil encontrar as palavras certas, dias em que precisamos de silêncio ou de espaço. Ainda estou aprendendo a compreender essas mudanças e a expressar melhor o que sinto. Não quero que o nosso amor seja uma cobrança para que tudo continue exatamente como era no começo.\n\nTenho saudade de algumas coisas que vivemos, é verdade. Mas, mais do que repetir o passado, o que eu desejo é que a gente possa descobrir um futuro ainda mais bonito — do nosso jeito, no nosso tempo. Quero continuar te conhecendo, ouvindo o que você sente, respeitando seus momentos e dividindo os meus. Quero que o carinho entre nós seja sempre uma escolha livre, sincera e recíproca.\n\nSei que amar também é aprender: pedir desculpas quando for preciso, conversar com honestidade, perceber o outro nos detalhes, cuidar sem apertar e estar presente sem deixar de ser quem somos. Eu quero aprender tudo isso com você. Não porque a nossa história precise ser perfeita, mas porque ela é importante para mim.\n\nQuero viver mais passeios sem pressa, mais fotos espontâneas, mais tardes ao ar livre, mais cinemas, mais risadas que começam do nada. Quero comemorar as suas conquistas e dividir as minhas. Quero que, mesmo nos dias em que a vida não pareça um poema, a gente se trate com gentileza e encontre motivos para continuar se escolhendo.\n\nEste livro não é um pedido para você ser diferente, nem uma tentativa de prender o que já passou. É só uma maneira de dizer, com o cuidado que minhas palavras às vezes não conseguem ter: você é muito especial para mim, Evelyn. Eu amo você, amo as lembranças que construímos e tenho vontade de criar muitas outras, se nós dois quisermos seguir escrevendo essa história.\n\nQue o nosso amor tenha espaço para crescer, liberdade para respirar e coragem para florescer de novo, quantas vezes for necessário. E que um dia, quando olharmos para trás, a gente descubra que as páginas mais bonitas ainda estavam por vir.\n\nCom todo o meu carinho e amor,\nDavi. 💜`;
+const videoSrc="assets/video-final.mp4";
+const $=id=>document.getElementById(id);
+const root=$('sheets');
+const create=(tag,cl,txt)=>{const n=document.createElement(tag);if(cl)n.className=cl;if(txt!==undefined)n.textContent=txt;return n;};
+const all=[];
+moments.forEach((moment,i)=>{
+ const sheet=create('section','sheet');sheet.setAttribute('aria-hidden','true');sheet.setAttribute('aria-label',`Página ${i+1}: ${moment.title}`);
+ const imagePanel=create('div','photo-panel');const mat=create('div','photo-mat');const image=new Image();image.src=photos[i];image.alt=`Fotografia ${i+1} de Davi e Evelyn`;image.decoding='async';image.loading='eager';mat.append(image);imagePanel.append(mat,create('div','photo-caption',moment.caption));
+ const poem=create('div','poem-panel');const body=create('div','poem-body');body.append(create('div','chapter',moment.chapter),create('h2','',moment.title),create('div','verse',moment.verse),create('div','sign','— Com amor, Davi'));poem.append(body);
+ sheet.append(imagePanel,poem,create('div','counter-small',`${String(i+1).padStart(2,'0')} / 09`));root.append(sheet);all.push(sheet);
+});
+const last=create('section','sheet final-sheet');last.setAttribute('aria-hidden','true');last.setAttribute('aria-label','Página final: vídeo e carta para Evelyn');
+const videoPanel=create('div','video-panel');const shell=create('div','video-shell');const video=document.createElement('video');video.src=videoSrc;video.id='video';video.controls=true;video.playsInline=true;video.preload='metadata';video.loop=true;video.poster='assets/video-capa.jpg';video.setAttribute('aria-label','Vídeo de Davi e Evelyn');video.setAttribute('playsinline','');video.setAttribute('webkit-playsinline','');
+const videoButton=create('button','video-play');videoButton.type='button';videoButton.id='videoPlay';videoButton.innerHTML='<span class="triangle" aria-hidden="true">▶</span><span>Toque para assistir ao vídeo com som</span>';
+shell.append(video,videoButton);videoPanel.append(shell);
+const letterPanel=create('div','letter-panel');const letterScroll=create('div','letter-scroll');letterScroll.append(create('div','chapter','A nossa história continua'),create('h2','','Para todas as páginas que ainda virão'),create('p','scroll-tip','Deslize nesta página para ler a carta inteira ↓'),create('div','letter-copy',letter));letterPanel.append(letterScroll);
+last.append(videoPanel,letterPanel,create('div','counter-small','09 / 09'));root.append(last);all.push(last);
+const song=$('song');const cover=$('cover');const prev=$('prev');const next=$('next');const counter=$('counter');const status=$('status');const musicToggle=$('musicToggle');const musicLabel=$('musicLabel');
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;const mobile=window.matchMedia('(max-width:850px)').matches;
+let idx=-1, opened=false, bowCount=0, animating=false, wantsMusic=true, autoplayBlocked=false;
+function onFinal(){return idx===all.length-1;}
+function setStatus(msg){status.textContent=msg||'';}
+function refreshAudioButton(){
+ if(onFinal()){musicLabel.textContent=video.muted?'Ativar som do vídeo':'Som do vídeo'; musicToggle.setAttribute('aria-label',video.muted?'Ativar som do vídeo':'Silenciar vídeo');}
+ else{musicLabel.textContent=!wantsMusic?'Música desligada':song.paused?'Ativar música':'Música ligada';musicToggle.setAttribute('aria-label',song.paused?'Iniciar música':'Pausar música');}
+}
+function startSong(){
+ if(!wantsMusic||onFinal())return;
+ const attempted=song.play();
+ if(attempted&&typeof attempted.catch==='function')attempted.then(()=>{if(onFinal()||!wantsMusic)song.pause();else{autoplayBlocked=false;setStatus('');}refreshAudioButton();}).catch(e=>{
+   if(e.name==='NotAllowedError'){autoplayBlocked=true;setStatus('Toque no laço ou no botão ♫ para liberar a música neste navegador.');}
+   else setStatus('Não foi possível tocar o áudio. Use o botão ♫ para tentar novamente.');
+   refreshAudioButton();
+ });
+ refreshAudioButton();
+}
+function stopVideo(){video.pause();videoButton.hidden=false;}
+function playVideo(){
+ song.pause();video.muted=false; video.volume=1;refreshAudioButton();
+ const attempted=video.play();
+ if(attempted&&typeof attempted.then==='function') attempted.then(()=>{videoButton.hidden=true;setStatus('');}).catch(()=>{videoButton.hidden=false;setStatus('Toque no botão ▶ sobre o vídeo para reproduzir com áudio.');});
+}
+function syncMedia(){
+ if(onFinal()){song.pause();if(video.readyState>0)video.currentTime=0;videoButton.hidden=false;playVideo();}
+ else {stopVideo();if(wantsMusic)startSong();else song.pause();}
+ refreshAudioButton();
+}
+function shower(count){
+ if(reduced)return;
+ const layer=$('petals');
+ for(let i=0;i<(mobile?Math.min(10,count):count);i++){
+  const p=create('span','petal');const w=10+Math.random()*15;
+  p.style.left=(Math.random()*102-1)+'%';
+  p.style.setProperty('--w',w+'px');p.style.setProperty('--h',(w*.65)+'px');
+  p.style.setProperty('--dur',(3.6+Math.random()*2.6)+'s');
+  p.style.setProperty('--delay',(Math.random()*.55)+'s');
+  p.style.setProperty('--drift',(Math.random()*280-140)+'px');
+  p.style.setProperty('--spin',(Math.random()*750-375)+'deg');
+  layer.append(p);p.addEventListener('animationend',()=>p.remove(),{once:true});
+ }
+}
+function updateControls(){counter.textContent=opened?`Página ${idx+1} de ${all.length}`:'Livro fechado';prev.disabled=!opened||idx<=0;next.disabled=!opened||idx>=all.length-1;}
+function showPage(target,dir=1){
+ if(!opened||animating||target<0||target>=all.length||idx===target)return;
+ const old=idx;idx=target;const direction=dir>=0?'nextturn':'prevturn';
+ if(old>=0){all[old].classList.remove('active','entering','nextturn','prevturn');all[old].classList.add('departing',direction);all[old].setAttribute('aria-hidden','true');}
+ const curr=all[target];curr.classList.add('active');curr.setAttribute('aria-hidden','false');
+ const scroller=curr.querySelector('.poem-panel,.letter-scroll');if(scroller)scroller.scrollTop=0;
+ animating=old>=0&&!reduced;
+ if(animating){curr.classList.add('entering',direction);}
+ const cleanup=()=>{if(old>=0)all[old].classList.remove('departing','nextturn','prevturn');curr.classList.remove('entering','nextturn','prevturn');animating=false;};
+ if(animating)setTimeout(cleanup,mobile?275:680);else cleanup();
+ updateControls();syncMedia();shower(onFinal()?27:19);
+}
+function openBook(){
+ if(opened)return;opened=true;idx=0;all[0].classList.add('active');all[0].setAttribute('aria-hidden','false');cover.classList.add('open');updateControls();startSong();shower(25);
+}
+$('bow').addEventListener('click',()=>{
+ if(bowCount>=2)return;
+ bowCount++;startSong();
+ if(bowCount===1){cover.classList.add('one-click');$('bowHint').textContent='Mais um toque para abrir nossa história ♡';}
+ else{cover.classList.add('unwrapped');$('bowHint').textContent='Um livro feito para você...';setTimeout(openBook,reduced?20:450);}
+});
+next.addEventListener('click',()=>showPage(idx+1,1));prev.addEventListener('click',()=>showPage(idx-1,-1));
+videoButton.addEventListener('click',playVideo);
+video.addEventListener('play',()=>{videoButton.hidden=true;song.pause();refreshAudioButton();});
+video.addEventListener('pause',()=>{if(onFinal())videoButton.hidden=false;});
+video.addEventListener('error',()=>{videoButton.hidden=false;setStatus('Vídeo indisponível. Abra a versão publicada do site; não use a prévia do arquivo ZIP.');});
+song.addEventListener('play',refreshAudioButton);song.addEventListener('pause',refreshAudioButton);
+song.addEventListener('error',()=>{setStatus('Não foi possível carregar a música. Use a versão do site publicada ou mantenha a pasta assets junto do index.html.');refreshAudioButton();});
+musicToggle.addEventListener('click',()=>{
+ if(onFinal()){video.muted=!video.muted;refreshAudioButton();return;}
+ if(song.paused){wantsMusic=true;startSong();}else{wantsMusic=false;song.pause();setStatus('');refreshAudioButton();}
+});
+document.addEventListener('keydown',e=>{if(e.target.closest('button,video'))return;if(e.key==='ArrowRight')showPage(idx+1,1);if(e.key==='ArrowLeft')showPage(idx-1,-1);});
+// Tenta reproduzir desde a abertura; o primeiro clique libera o áudio onde o navegador exige interação.
+window.addEventListener('load',startSong);document.addEventListener('visibilitychange',()=>{if(document.hidden){song.pause();video.pause();}else if(!onFinal()&&opened&&wantsMusic){startSong();}});
+refreshAudioButton();
+})();
+</script>
+</body>
+</html>
